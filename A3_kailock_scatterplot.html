@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fiber and Protein Scatterplot</title>
+</head>
+<body>
+<link href="style.css" rel="stylesheet">
+<script src="https://d3js.org/d3.v4.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+<div id="layout">
+    <div id="title">
+        <h1>Fiber and Protein</h1>
+        <p>Fiber can help prevent heart disease, diabetes, and improve digestive health.
+        <br>Protein helps build and repair tissues, and builds and maintains muscle mass.
+        <br>Together, foods high in fiber and protein can make for a healthy diet, making you feel fuller on lesser calories.</p>
+    </div>
+
+
+    <div id="visualization">
+        <svg class="chart"></svg>
+        <script src="A3_kailock_scatterplot.js"></script>
+    </div>
+
+    <div id="controls">
+        <div id="filters">
+            <h3>Fiber Content</h3>
+            <div id="fiberslider" class="slider-range"></div>
+            <label for="fiberamount">Fiber amount:</label>
+            <input type="text" id ="fiberamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+
+            <h3>Protein Content</h3>
+            <div id="proteinslider" class="slider-range"></div>
+            <label for="proteinamount">Protein amount:</label>
+            <input type="type" id="proteinamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

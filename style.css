@@ -1,0 +1,41 @@
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+#title {
+    text-align: center;
+    padding: 2em;
+    padding-bottom: 0;
+}
+
+#filters {
+    padding-left: 25em;
+    padding-right: 25em;
+}
+
+#visualization {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.chart div {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+}
+
+.axis line, .axis path {
+    fill: none;
+    stroke: #000;
+}
+
+.tooltip {
+    position: absolute;
+    width: 200px;
+    height: 75px;
+    pointer-events: none;
+    background: white;
+}
