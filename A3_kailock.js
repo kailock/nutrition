@@ -39,7 +39,6 @@ $(document).ready(function() {
             selectedData = [];
 
             data.forEach(function(d) {
-               // if(d.Shrt_Desc == selectedFood[0]) {
                 if($.inArray(d.Shrt_Desc, selectedFood) >= 0) {
                     nutrients.forEach(function(n) {
                         selectedData.push({

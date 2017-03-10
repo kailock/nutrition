@@ -52,11 +52,11 @@ var yNutrient = "Fiber";
 testPromise.then(
     function() {
         var x = d3.scaleLinear()
-            .domain([0, 100])//d3.max(dataset, function(d) {return d[xNutrient]})])//d3.max(dataset, function(d) {return d.Protein})])
+            .domain([0, 100])
             .range([0, w]);
 
         var y = d3.scaleLinear()
-            .domain([0, 100])//d3.max(dataset, function(d) {return d[yNutrient]})])//d3.max(dataset, function(d) {return d.Fiber})])
+            .domain([0, 100])
             .range([h, 0]);
 
         var xAxis = d3.axisBottom()
