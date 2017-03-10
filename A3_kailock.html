@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nutritional Information</title>
+    <title>Nutritional Information of Food Products</title>
 </head>
 <body>
 <link href="style.css" rel="stylesheet">
@@ -11,22 +11,56 @@
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
-<div id="layout">
-    <div id="title">
-        <h1>Nutritional Information</h1>
-        <h3>Select a food:</h3>
-        <select name="foods" id="foods" class="form-control" size="5" multiple></select>
+<!-- for autocomplete search bar, received from jquery.com -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!--Bootstrap-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- My D3 code -->
+<script src="A3_kailock.js"></script>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Nutritional Information of Food Products</h1>
+        <p><i>By Kaitlin Lockhart | INFO 474 </i></p>
         <p>Hover over bars to see daily recommended amount. Percentages are based on the average adult.
-        <br>Value shown could be higher or lower than your personal, recommended daily intake based on height/weight or
-        amount of calories consumed regularly.</p>
-    </div>
-
-
-    <div id="visualization">
-       <!-- <script src="A3_kailock.js"></script> -->
-        <script src="A3_kailock.js"></script>
+            Value shown could be higher or lower than your personal, recommended daily intake based on height/weight or
+            amount of calories consumed regularly.</p>
+        <p>Static lines are shown for reference of the approximate daily recommended amount. (Daily recommended amount of Carbohydrates is between 225 to 325.)
+        </p>
+        <p>Hold <kbd>ctrl</kbd> to select more than one food at a time.</p>
+        <p>Click for <a href="http://students.washington.edu/kailock/info474/nutrition/A3_kailock_scatterplot.html">Nutritional Comparison Scatterplot</a></p>
     </div>
 </div>
+
+
+<!-- Food selection drop down -->
+<div class="container">
+    <div id="settings row text-center">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
+        <h3>Select a food:</h3>
+            <p>After clicking a food, you can also type to search for something of interest</p>
+        <select name="foods" id="foods" class="form-control" size="5" multiple></select>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+</div>
+
+
+
+<div class="col-xs-2">
+</div>
+    <div id="visualization">
+    </div>
+<div class="col-xs-2">
+</div>
+
 
 </body>
 </html>

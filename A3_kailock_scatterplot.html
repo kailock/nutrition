@@ -2,22 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fiber and Protein Scatterplot</title>
+    <title>Nutritional Comparison Scatterplot</title>
+
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<link href="style.css" rel="stylesheet">
+
+<!-- d3 -->
 <script src="https://d3js.org/d3.v4.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
-<div id="layout">
-    <div id="title">
-        <h1>Fiber and Protein</h1>
-        <p>Fiber can help prevent heart disease, diabetes, and improve digestive health.
-        <br>Protein helps build and repair tissues, and builds and maintains muscle mass.
-        <br>Together, foods high in fiber and protein can make for a healthy diet, making you feel fuller on lesser calories.</p>
+<!--Bootstrap-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Nutrient Compairsons</h1>
+        <p><i>By Kaitlin Lockhart | INFO 474 </i></p>
+
+        <p>Use the drop downs to select two nutrients to compare. Use the sliders on the right
+         to adjust content amount of each nutrient. Hover over data points to see what food it is.</p>
+        <p>Click for <a href="http://students.washington.edu/kailock/info474/nutrition/A3_kailock.html">Nutrtional Information of Food Products</a></p>
     </div>
+</div>
+
+<!-- Nutrient selection -->
+<div class="container">
+    <div class="settings row text-center">
+        <div class="col-xs-6">
+            <h3>Y-Axis Nutrient</h3>
+            <select id="nutrientselect1" class="form-control" size="5">
+                <option selected="selected" value="fiber">Fiber</option>
+                <option value="protein">Protein</option>
+                <option value="carbs">Carbohydrates</option>
+                <option value="sugar">Sugar</option>
+                <option value="fat">Fat</option>
+            </select>
+        </div>
+
+        <div class="col-xs-6">
+            <h3>X-Axis Nutrient</h3>
+            <select id="nutrientselect2" class="form-control" size="5">
+                <option value="fiber">Fiber</option>
+                <option selected="selected" value="protein">Protein</option>
+                <option value="carbs">Carbohydrates</option>
+                <option value="sugar">Sugar</option>
+                <option value="fat">Fat</option>
+            </select>
+        </div>
+    </div>
+</div>
 
 
     <div id="visualization">
@@ -25,21 +63,34 @@
         <script src="A3_kailock_scatterplot.js"></script>
     </div>
 
+    <!-- Filters -->
     <div id="controls">
-        <div id="filters">
-            <h3>Fiber Content</h3>
-            <div id="fiberslider" class="slider-range"></div>
-            <label for="fiberamount">Fiber amount:</label>
-            <input type="text" id ="fiberamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        <h2>Nutrition Filters</h2>
+        <h4>Fiber Content</h4>
+        <div id="fiberslider" class="slider-range"></div>
+        <label for="fiberamount">Fiber amount:</label>
+        <input type="text" id ="fiberamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
 
-            <h3>Protein Content</h3>
-            <div id="proteinslider" class="slider-range"></div>
-            <label for="proteinamount">Protein amount:</label>
-            <input type="type" id="proteinamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-        </div>
+        <h4>Protein Content</h4>
+        <div id="proteinslider" class="slider-range"></div>
+        <label for="proteinamount">Protein amount:</label>
+        <input type="text" id="proteinamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
 
+        <h4>Carbohydrate Content</h4>
+        <div id="carbslider" class="slider-range"></div>
+        <label for="carbamount">Carbohydate amount:</label>
+        <input type="text" id ="carbamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+
+        <h4>Sugar Content</h4>
+        <div id="sugarslider" class="slider-range"></div>
+        <label for="sugaramount">Sugar amount:</label>
+        <input type="text" id ="sugaramount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+
+        <h4>Fat Content</h4>
+        <div id="fatslider" class="slider-range"></div>
+        <label for="fatamount">Fat amount:</label>
+        <input type="text" id ="fatamount" readonly style="border:0; color:#f6931f; font-weight:bold;">
     </div>
-</div>
 
 </body>
 </html>

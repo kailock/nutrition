@@ -1,5 +1,5 @@
 /**
- * Created by kaitl on 2/18/2017.
+ * Created by kaitl on 3/7/2017.
  */
 
 // Graphic margins and dimensions
@@ -44,7 +44,6 @@ var testPromise = new Promise(
     }
 );
 
-// Initially selected nutrients
 var xNutrient = "Protein";
 var yNutrient = "Fiber";
 
@@ -78,6 +77,8 @@ testPromise.then(
         chart.append("text")
             .attr("transform", "translate(" + (w / 2) + " ," + (h + margin.bottom) + ")")
             .style("text-anchor", "middle");
+        //    .text("Protein (g)");
+        //    .text(xNutrient);
 
         // y axis
         chart.append("g")
@@ -95,6 +96,8 @@ testPromise.then(
             .attr("x",0 - (height / 2))
             .attr("dy", "1em")
             .style("text-anchor", "middle");
+           // .text("Fiber (g)");
+           // .text(yNutrient);
 
         drawVis(dataset);
 
@@ -116,7 +119,7 @@ var tooltip = d3.select("#visualization").append("div")
     .style("opacity", 0);
 
 
-// draw the circles initially and on each interaction with a control
+//draw the circles initially and on each interaction with a control
 function drawVis(dataset) {
 
     // Axes should not change in length when data is filtered.
@@ -138,13 +141,16 @@ function drawVis(dataset) {
     var circle = chart.selectAll("circle").data(dataset);
 
     circle
+       // .attr("cx", function(d) { return x(d.Protein);  })
         .attr("cx", function(d) { return x(d[xNutrient]);  })
+      //  .attr("cy", function(d) { return y(d.Fiber);  });
         .attr("cy", function(d) { return y(d[yNutrient]);  });
 
     circle.exit().remove();
 
     circle.enter().append("circle")
         .attr("cx", function(d) { return x(d[xNutrient]);  })
+        //.attr("cx", function(d) { return x(xNutrient);  })
         .attr("cy", function(d) { return y(d[yNutrient]);  })
         .attr("r", 4)
         .on("mouseover", function(d) {
@@ -155,13 +161,11 @@ function drawVis(dataset) {
             tooltip.html('<b>' + d.Shrt_Desc + '</b><br />' + xNutrient + ": " + d[xNutrient] + "(g)" + '<br />' + yNutrient + ": " + d[yNutrient] + "(g)")
                 .style("left",(d3.event.pageX + 5) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
-            d3.select(this).attr("r", 10).style("fill", "#f6931f");
         })
         .on("mouseout", function(d) {
             tooltip.transition()
                 .duration(500)
                 .style("opacity", 0);
-            d3.select(this).attr("r", 4).style("fill", "black");
         })
         .style("stroke", "black")
         .style("opacity", 0.5);

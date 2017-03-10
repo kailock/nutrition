@@ -8,14 +8,20 @@ body {
     padding-bottom: 0;
 }
 
-#filters {
-    padding-left: 25em;
-    padding-right: 25em;
+#visualization, #controls {
+  float: left;
 }
 
 #visualization {
     padding-left: 5em;
-    padding-right: 5em;
+}
+
+#controls {
+    width: 200px;
+}
+
+#foods {
+    margin-bottom: 2em;
 }
 
 .chart div {
@@ -33,7 +39,9 @@ body {
 }
 
 .tooltip {
+    border-radius: 20px;
     position: absolute;
+    padding: 5px;
     width: 200px;
     height: 75px;
     pointer-events: none;
